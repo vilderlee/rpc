@@ -18,5 +18,7 @@ public class Test {
         Context context = new Context("rpc.xml");
         HelloService helloService = (HelloService) context.getBean("helloServiceImpl");
         System.out.println(helloService.sayHello());
+
+        System.in.read();
     }
 }

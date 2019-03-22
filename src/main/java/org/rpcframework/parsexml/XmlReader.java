@@ -27,7 +27,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class XmlReader {
 
     private Context beanFactory;
-    private Map<String, BeanDefineConfig> map = new ConcurrentHashMap();
+    private Map<String, BeanDefineConfig> map = new ConcurrentHashMap<>();
     public XmlReader(Context context) {
         this.beanFactory = context;
     }

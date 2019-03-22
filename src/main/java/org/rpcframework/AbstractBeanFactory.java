@@ -1,7 +1,6 @@
 package org.rpcframework;
 
 import org.rpcframework.parsexml.BeanDefineConfig;
-import org.rpcframework.parsexml.XmlReader;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -18,7 +17,6 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public abstract class AbstractBeanFactory implements BeanFactory{
 
-    private XmlReader xmlReader;
     private String configs;
     public Map<String, BeanDefineConfig> beanMap = new ConcurrentHashMap<>(256);
     public Map<String, Object> beanObjectMap = new ConcurrentHashMap<>(256);
@@ -36,17 +34,5 @@ public abstract class AbstractBeanFactory implements BeanFactory{
 
     public String getConfigs() {
         return configs;
-    }
-
-    public void setConfigs(String configs) {
-        this.configs = configs;
-    }
-
-    public XmlReader getXmlReader() {
-        return xmlReader;
-    }
-
-    public void setXmlReader(XmlReader xmlReader) {
-        this.xmlReader = xmlReader;
     }
 }
