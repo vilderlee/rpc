@@ -28,9 +28,11 @@ public class XmlReader {
 
     private Context beanFactory;
     private Map<String, BeanDefineConfig> map = new ConcurrentHashMap<>();
+
     public XmlReader(Context context) {
         this.beanFactory = context;
     }
+
     private static final String ROOT_ELEMENT = "root";
 
     public void loadBeanDefine() throws DocumentException {
@@ -45,7 +47,14 @@ public class XmlReader {
                 if (!map.containsKey(id)) {
                     BeanDefineConfig beanDefineConfig = new BeanDefineConfig();
                     beanDefineConfig.setId(id);
-                    beanDefineConfig.setType(element.attributeValue(BeanDefineConfig.TYPE));
+
+                    String type = element.attributeValue(BeanDefineConfig.TYPE);
+                    if (StringUtils.isEmpty(type)) {
+                        beanDefineConfig.setType(element.attributeValue(BeanDefineConfig.TYPE_DEFAULT));
+                    } else {
+                        beanDefineConfig.setType(element.attributeValue(BeanDefineConfig.TYPE));
+                    }
+
                     beanDefineConfig.setClassName(element.attributeValue(BeanDefineConfig.CLASS));
                     String scope = element.attributeValue(BeanDefineConfig.SCOPE);
                     if (StringUtils.isEmpty(scope)) {

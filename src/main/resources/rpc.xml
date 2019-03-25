@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-    <bean id="helloServiceImpl" class="com.vilderlee.rpc.HelloServiceImpl" scope="single" type="normal">
+    <bean id="helloServiceImpl" class="com.vilderlee.rpc.HelloServiceImpl" scope="single" type="service">
         <property key="name" value="Tom"></property>
     </bean>
     <!--<bean id="helloService" class="com.vilderlee.rpc.HelloService" ref="helloServiceImpl" type="service"></bean>-->

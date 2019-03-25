@@ -15,14 +15,15 @@ import java.util.Set;
  */
 public class BeanDefineConfig {
 
-    static final String ID = "id";
-    static final String TYPE = "type";
-    static final String CLASS = "class";
-    static final String SCOPE = "scope";
-    static final String SINGLE = "single";
-    static final String KEY = "key";
-    static final String VALUE = "value";
+    public static final String ID = "id";
+    public static final String TYPE = "type";
+    public static final String CLASS = "class";
+    public static final String SCOPE = "scope";
+    public static final String SINGLE = "single";
+    public static final String KEY = "key";
+    public static final String VALUE = "value";
 
+    public static final String TYPE_DEFAULT = "normal";
     private String id;
     private String className;
     private String scope;

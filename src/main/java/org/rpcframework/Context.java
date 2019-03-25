@@ -46,11 +46,18 @@ public class Context extends AbstractBeanFactory {
 
     @Override public void doCreateBean() {
         beanMap.forEach((name, bean) -> {
+            //获取类名称
             String className = bean.getClassName();
+            //获取bean的类型
+            String type = bean.getType();
             try {
                 Class clz = Class.forName(className);
                 Object o = clz.newInstance();
                 beanObjectMap.put(name, o);
+                if ("service".equals(type)) {
+
+                }
+
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             } catch (IllegalAccessException e) {
